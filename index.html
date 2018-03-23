@@ -1,0 +1,50 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>Мой блог</title>
+</head>
+
+<body>
+    <header>
+        <center><h1>Моя первая персональная страница</h1></center>
+    </header>
+
+    <table id="main" width="100%">
+        <tr width="70%">
+            <td colspan=2>
+                <nav>
+                    <a href="/">Главная</a>
+                    <a href="about.html">Обо мне</a>
+                </nav>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <?php foreach($input["pages"] as $page):?>
+                <?php print($page)?>
+                <?php endforeach;?>
+            </td>
+            <td align="right">
+                <aside>
+                    <?php foreach($input["menu"] as $item):?>
+                    <p>
+                        <a href="pages/<?php print($item)?>">
+                            <?php print($item);?>
+                        </a>
+                    </p>
+                    <?php endforeach;?>
+                </aside>
+            </td>
+        </tr>
+    </table>
+</body>
+<footer>
+    Copyright ZurgInq,
+    <time>
+        <?php print(strftime('%Y'))?>
+    </time>
+</footer>
+
+</html>
